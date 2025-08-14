@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sameer Shah â¢ Portfolio</title>
+  <meta name="description" content="Premium animated portfolio of Sameer Shah â projects, skills, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-1: #0f1020;
+      --bg-2: #0b0e1a;
+      --fg: #e8ebff;
+      --muted: #9aa4c7;
+      --brand-1: #7c5cff;
+      --brand-2: #22d1ee;
+      --accent: #ff6bcb;
+      --card: rgba(255, 255, 255, 0.06);
+      --stroke: rgba(255, 255, 255, 0.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius-xl: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--fg);
+      background: radial-gradient(1200px 800px at 20% 0%, #1a1b3a, transparent 60%),
+                  radial-gradient(800px 600px at 90% 10%, #0b3d5b, transparent 60%),
+                  linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.55; overflow-x: hidden;
+    }
+    /* Animated gradient halo */
+    .bg-orb { position: fixed; inset: -20vmax; z-index: -1; filter: blur(70px); opacity: .45;
+      background: conic-gradient(from 90deg, var(--brand-1), var(--accent), var(--brand-2), var(--brand-1));
+      animation: spin 18s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }/* Navbar */
+header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(10,12,26,.85), rgba(10,12,26,.35)); border-bottom: 1px solid var(--stroke); }
+.nav { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .3px; }
+.brand .logo { width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, var(--brand-1), var(--brand-2)); display: grid; place-items: center; font-family: "JetBrains Mono", monospace; box-shadow: var(--shadow); }
+nav a { color: var(--fg); text-decoration: none; margin-left: 14px; padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: .95rem; opacity: .92; }
+nav a:hover { background: var(--card); opacity: 1; }
+
+/* Sections */
+section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+.grid { display: grid; gap: 24px; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 24px; }
+.tag { display: inline-flex; gap: 8px; align-items: center; padding: 8px 12px; border: 1px solid var(--stroke); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.03); }
+.title { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; margin: 10px 0 14px; font-weight: 900; letter-spacing: .2px; }
+.title .grad { background: linear-gradient(90deg, var(--brand-2), var(--accent), var(--brand-1)); background-size: 200% 200%; -webkit-background-clip: text; color: transparent; animation: shimmer 6s linear infinite; }
+@keyframes shimmer { to { background-position: 200% 50%; } }
+.subtitle { color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
+.cta { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+.btn { border: 1px solid var(--stroke); padding: 12px 16px; border-radius: 14px; background: var(--card); color: var(--fg); text-decoration: none; font-weight: 700; box-shadow: var(--shadow); }
+.btn.primary { background: linear-gradient(135deg, var(--brand-2), var(--brand-1)); border: none; }
+.hero-card { padding: 18px; border: 1px solid var(--stroke); border-radius: var(--radius-xl); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); box-shadow: var(--shadow); }
+.snippet { background: #0b0f1f; border: 1px solid var(--stroke); border-radius: 16px; padding: 14px; font-family: "JetBrains Mono", monospace; font-size: .9rem; color: #d7e0ff; }
+.typing { display: inline-block; border-right: 2px solid #d7e0ff; white-space: nowrap; overflow: hidden; }
+
+/* About */
+.about { grid-template-columns: .9fr 1.1fr; align-items: center; }
+.avatar { width: 100%; aspect-ratio: 1 / 1; border-radius: 24px; background: radial-gradient(80% 80% at 30% 30%, #233a67, #11162c); border: 1px solid var(--stroke); box-shadow: var(--shadow); }
+.card { padding: 22px; border: 1px solid var(--stroke); border-radius: var(--radius-xl); background: var(--card); box-shadow: var(--shadow); }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+.kpi { background: rgba(255,255,255,.04); padding: 14px; border-radius: 14px; border: 1px solid var(--stroke); text-align: center; }
+.kpi .num { font-size: 1.4rem; font-weight: 900; background: linear-gradient(90deg, var(--brand-1), var(--accent)); -webkit-background-clip: text; color: transparent; }
+
+/* Skills */
+.skills { grid-template-columns: 1fr 1fr; }
+.skill { margin: 10px 0 18px; }
+.skill h4 { margin: 0 0 8px; font-weight: 700; }
+.bar { height: 12px; background: rgba(255,255,255,.07); border-radius: 999px; overflow: hidden; border: 1px solid var(--stroke); }
+.bar > span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--brand-2), var(--brand-1)); border-radius: 999px; transition: width 1.2s cubic-bezier(.2,.7,.2,1); }
+
+/* Projects */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.project { position: relative; padding: 18px; border-radius: 20px; border: 1px solid var(--stroke); background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); box-shadow: var(--shadow); overflow: hidden; }
+.project:hover { transform: translateY(-3px); transition: transform .3s ease; }
+.project .thumb { height: 150px; border-radius: 14px; border: 1px solid var(--stroke); background: radial-gradient(60% 60% at 20% 20%, #2a3d74, #141a33); margin-bottom: 12px; }
+.project h3 { margin: 8px 0 6px; }
+.chip { display: inline-block; font-size: .8rem; padding: 4px 10px; border: 1px solid var(--stroke); border-radius: 999px; color: var(--muted); margin-right: 6px; margin-bottom: 6px; }
+.links { margin-top: 10px; display: flex; gap: 10px; }
+.links a { text-decoration: none; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--stroke); color: var(--fg); background: rgba(255,255,255,.05); }
+
+/* Contact */
+.contact-card { display: grid; gap: 16px; grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
+.field { display: grid; gap: 8px; }
+label { color: var(--muted); font-size: .9rem; }
+input, textarea { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--stroke); background: rgba(255,255,255,.05); color: var(--fg); outline: none; }
+textarea { min-height: 120px; resize: vertical; }
+
+/* Footer */
+footer { border-top: 1px solid var(--stroke); color: var(--muted); text-align: center; padding: 32px 20px; }
+
+/* Reveal animations */
+.reveal { opacity: 0; transform: translateY(18px) scale(.98); }
+.reveal.visible { opacity: 1; transform: translateY(0) scale(1); transition: all .8s cubic-bezier(.2,.7,.2,1); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero, .about, .skills { grid-template-columns: 1fr; }
+  .title { font-size: clamp(1.8rem, 8vw, 3rem); }
+}
+
+  </style>
+</head>
+<body>
+  <div class="bg-orb"></div>  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">S</div>
+        <span id="brandName">Sameer&nbsp;Shah</span>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>  <!-- HERO -->  <section id="home" class="reveal">
+    <div class="hero">
+      <div>
+        <div class="tag">â¨ Premium Portfolio</div>
+        <h1 class="title">
+          Hi, I'm <span class="grad" id="heroName">Sameer Shah</span>
+        </h1>
+        <p class="subtitle">
+          I craft clean, fast, and delightful web experiences. <span class="typing" id="typing"></span>
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="snippet"><code>$ npm create sameer-portfolio</code><br>
+        <small style="color:var(--muted)">Tip: Replace text in this single file to make it yours.</small></div>
+      </div>
+    </div>
+  </section>  <!-- ABOUT -->  <section id="about" class="reveal">
+    <div class="grid about">
+      <div class="avatar" aria-label="profile placeholder"></div>
+      <div class="card">
+        <h2>About Me</h2>
+        <p>I'm Sameer, a curious builder who enjoys turning ideas into interactive interfaces. I focus on clean UI, meaningful microâinteractions, and performance.</p>
+        <div class="kpis">
+          <div class="kpi"><div class="num" id="xpNum">Fresher</div><div class="lbl">Experience</div></div>
+          <div class="kpi"><div class="num" id="projNum">10+</div><div class="lbl">Mini Projects</div></div>
+          <div class="kpi"><div class="num" id="certNum">4</div><div class="lbl">Certificates</div></div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- SKILLS -->  <section id="skills" class="reveal">
+    <h2>Skills</h2>
+    <div class="grid skills">
+      <div class="card">
+        <div class="skill"><h4>Basics computer knowledge/ CSS</h4><div class="bar"><span data-percent="90"></span></div></div>
+        <div class="skill"><h4>Communication/ Problem solving</h4><div class="bar"><span data-percent="80"></span></div></div>
+        <div class="skill"><h4>Mathematical and computational</h4><div class="bar"><span data-percent="70"></span></div></div>
+      </div>
+      <div class="card">
+        <div class="skill"><h4>ms office</h4><div class="bar"><span data-percent="75"></span></div></div>
+        <div class="skill"><h4>Time management</h4><div class="bar"><span data-percent="65"></span></div></div>
+        <div class="skill"><h4>UI Design</h4><div class="bar"><span data-percent="60"></span></div></div>
+      </div>
+    </div>
+  </section>  <!-- PROJECTS -->  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+    <div class="cards">
+      <article class="project">
+        <div class="thumb"></div>
+        <h3>Animated Name App</h3>
+        <p class="muted">A fun typingâanimation app that renders your name with premium effects.</p>
+        <div>
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span>
+        </div>
+        <div class="links">
+          <a href="#">Live</a>
+          <a href="#">Code</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="thumb"></div>
+        <h3>Portfolio v1</h3>
+        <p class="muted">A responsive oneâpage portfolio with gradient orbs and scroll reveals.</p>
+        <div>
+          <span class="chip">Responsive</span><span class="chip">Animations</span>
+        </div>
+        <div class="links">
+          <a href="#">Live</a>
+          <a href="#">Code</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="thumb"></div>
+        <h3>Task Tracker</h3>
+        <p class="muted">A simple task tracker with localStorage and smooth UI.</p>
+        <div>
+          <span class="chip">JavaScript</span><span class="chip">Productivity</span>
+        </div>
+        <div class="links">
+          <a href="#">Live</a>
+          <a href="#">Code</a>
+        </div>
+      </article>
+    </div>
+  </section>  <!-- CONTACT -->  <section id="contact" class="reveal">
+    <h2>Contact</h2>
+    <div class="contact-card card">
+      <div class="field">
+        <label for="name">Your Name</label>
+        <input id="name" placeholder="Sameer shah" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="sameershah9598@gmail.com" />
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Say hello..." ></textarea>
+      </div>
+      <div class="cta">
+        <button class="btn primary" id="sendBtn" type="button">Send</button>
+        <a class="btn" href="mailto: sameershah9598@gmail.com">Email</a>
+      </div>
+      <small style="color:var(--muted)">Note: This demo sends via your email app. Replace <code>sameershah9598@gmail.com</code> with your address.</small>
+    </div>
+  </section>  <footer>
+    Â© <span id="year"></span> <span id="footerName">Sameer Shah</span> â¢ Built with HTML, CSS & JS
+  </footer>  <script>
+    // ===== EASY CUSTOMIZATION =====
+    const YOUR_NAME = "Sameer Shah";           // â change here
+    const YOUR_EMAIL = "sameershah9598@gmail.com";      // â change here
+    document.getElementById('brandName').textContent = YOUR_NAME;
+    document.getElementById('heroName').textContent = YOUR_NAME;
+    document.getElementById('footerName').textContent = YOUR_NAME;
+    document.querySelector('a[href="#contact"] + a')?.setAttribute('href', `mailto:${YOUR_EMAIL}`);
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.href=`mailto:${YOUR_EMAIL}`);
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Typing effect words
+    const words = ["Frontâend Developer", "UI Enthusiast", "Learner"];
+    const typingEl = document.getElementById('typing');
+    let wi = 0, ci = 0, deleting = false; 
+    function typeLoop(){
+      const word = words[wi % words.length];
+      typingEl.style.opacity = 1;
+      if(!deleting){
+        typingEl.textContent = word.slice(0, ++ci);
+        if(ci === word.length){ deleting = true; setTimeout(typeLoop, 1200); return; }
+      } else {
+        typingEl.textContent = word.slice(0, --ci);
+        if(ci === 0){ deleting = false; wi++; }
+      }
+      setTimeout(typeLoop, deleting ? 40 : 80);
+    }
+    typeLoop();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // Animate skill bars on view
+    const bars = document.querySelectorAll('.bar > span');
+    const barObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const pct = e.target.getAttribute('data-percent') || 0;
+          e.target.style.width = pct + '%';
+          barObs.unobserve(e.target);
+        }
+      })
+    }, { threshold: 0.4 });
+    bars.forEach(b=>barObs.observe(b));
+
+    // Contact button -> open mailto with prefill
+    document.getElementById('sendBtn').addEventListener('click', ()=>{
+      const n = encodeURIComponent(document.getElementById('name').value || '');
+      const m = encodeURIComponent(document.getElementById('message').value || '');
+      const to = YOUR_EMAIL;
+      const subj = `Portfolio inquiry from ${n || 'Visitor'}`;
+      const body = m + '\n\nâ Sent from portfolio site';
+      window.location.href = `mailto:${to}?subject=${subj}&body=${body}`;
+    });
+  </script></body>
+</html>
